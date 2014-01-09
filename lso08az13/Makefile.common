@@ -1,0 +1,11 @@
+# example: $(X)/elf32ltsmip.h.umpsaout.x, $(X)/elf32ltsmip.h.umpscore.x
+X=/usr/share/uMPS
+
+# example: $(L)/crti.o,  $(L)/crtso.o,  $(L)/libumps.o
+L=/usr/lib/uMPS
+
+# example: $(B)/mipsel-linux-gcc, $(B)/umps-elf2umps, ...
+B=/usr/bin
+
+# example: -I $(I)/uMPS
+I=/usr/include/uMPS

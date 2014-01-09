@@ -1,0 +1,84 @@
+Il progetto e' stato sviluppato da: vedi AUTHORS.
+
+Licenza di utilizzo del software: vedi LICENSE.
+
+Il TREE del progetto e' il seguente:
+
+h:
+	contiene le definizioni delle strutture dati e delle costanti utili alla realizzazione del progetto;
+
+e:
+	contiene le interfacce dei moduli sviluppati;
+
+phase1/test:
+	contiene i files di test sviluppati dai professori per testare il progetto rispettivamente:
+	* p1atest.c, testa la phase1a legata alla gestione delle queue,
+	* p1btest.c, testa la phase1a legata alla gestione della bitmap,
+	* p1b2test.c, testa la phase1b legata al boot del kernel;
+
+phase1/src:
+	contiene i moduli sviluppati dal nostro team, rispettivamente:
+	* tcb.c, gestione dell'allocazione/deallocazione dei Thread Control Block e gestione delle Thread Queue,
+	* tid.c, fornisce le funzioni utilizzabili direttamente utilizzabili per la gestione di quanto detto sopra,
+	* boot.c (solo per phase1), esegue il boot del sistema con le giuste inizializzazioni per la gestione delle eccezioni;
+
+phase2/test:
+	contiene il file di test sviluppato dai professori per testare la phase2 del progetto;
+
+phase2/src:
+	contiene i moduli sviluppati dal nostro team, rispettivamente:
+	* boot.c (phase2), gestisce la sequenza di boot del kernel creando i primi 2 thread; SSI e test;
+	* scheduler.c, gestisce l'avvicendamento dei thread secondo una politica round robin;
+	* interrupt.c, gestisce il verificarsi di interrupt HW da parte dei device;
+	* syscall.c, implementa le 3 uniche syscall del kernel;
+	* ssi.c, implementa un demone che fornisce servizi all'intero sistema;
+	* prgtrap.c, gestisce il verificarsi di program trap;
+	* tlbtrap.c, gestisce il verificarsi di tlb trap;
+
+doc:
+	* contiene DOCphase1AB.odt e DOCphase1AB.pdf, la documentazione discorsiva di phase1;
+	* contiene DOCphase2.odt e DOCphase2.pdfm, la documentazione discorsiva di phase2.
+
+La COMPILAZIONE del progetto puo' essere facilmente eseguita utilizzando il Makefile fornito. Quest'ultimo presenta
+diversi target di compilazione in base alle necessita', piu' precisamente:
+
+phase1:
+	esegue la compilazione, esclusivamente, dei moduli di phase1 da noi sviluppati (tcb.c, tid.c e boot.c);
+
+p1atest:
+	esegue la compilazione dei moduli da noi sviluppati, del test p1atest.c e infine crea l'immagine del
+	kernel con rispettivi device disk0.umps e tape0.umps;
+
+p1btest:
+	esegue la compilazione dei moduli da noi sviluppati, del test p1btest.c e infine crea l'immagine del
+	kernel con rispettivi device disk0.umps e tape0.umps;
+
+p1b2test:
+	esegue la compilazione dei moduli da noi sviluppati, del test p1b2test.c e infine crea l'immagine del
+	kernel con rispettivi device disk0.umps e tape0.umps;
+
+phase2:
+	esegue la compilazione, esclusivamente, dei moduli di phase2 da noi sviluppati:
+	* boot.c;
+	* scheduler.c;
+	* interrupt.c;
+	* syscall.c;
+	* ssi.c;
+	* prgtrap.c;
+	* tlbtrap.c;
+
+p2test:
+	esegue la compilazione dei moduli da noi sviluppati, del test p2test.c e infine crea l'immagine del
+	kernel con rispettivi device disk0.umps e tape0.umps;
+
+clean:
+	esegue la pulizia dei sorgenti dell'intero progetto;
+
+compressed:
+	crea il pacchetto lso08az13.phase2.tar.gz nella cartella ../ .
+
+Al termine di ogni seguenza di compilazione viene stampato un messaggio a video riportante il successo di compilazione.
+Dopo aver eseguito con successo la compilazione di uno dei target che prevedono la creazione dell'immagine del kernel, per
+ESEGUIRE il progetto basta far partire l'emulatore di uMPS tramite il comando: umps.
+
+Enjoy :-D
